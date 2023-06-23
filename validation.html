@@ -1,0 +1,782 @@
+--To validate mobile number----
+
+
+function validateMobile2(){
+       var mobVal2 = document.getElementById("mobile2").value;
+       var regmob2 = /[6789]{1}[0-9]{9}/;
+       if(mobVal2!='') {
+       if (regmob2.test(mobVal2)==true) {
+          document.getElementById("sp2").innerHTML=("");
+           document.getElementById("sp2").style.color="";
+           document.getElementById("button").disabled=false;
+       } 
+      else {
+           document.getElementById("sp2").innerHTML="Invaild mobile No!";
+           document.getElementById("sp2").style.color="red";
+           document.getElementById("button").disabled=true;
+           phone.focus();
+       }
+       }
+       else {
+           sp2.innerHTML=("");
+           sp2.style.color="";
+           document.getElementById("button").disabled=false;
+           
+       }
+   
+   }
+   
+         
+//   redirect($_SERVER['HTTP_REFER']);
+redirect(base_url($_SERVER['PHP_SELF']));
+ ----------To validate Name-------
+ /'
+ 
+-----------TO Validate Zip code(PinCode)-------
+for zipcode(pincode)
+onkeypress="return (event.charCode >=48 && event.charCode <= 67)"
+
+---------To Validate Image--------------
+
+ function preview(image){
+     var filePath = image.value;
+     //alert(filePath);
+                       var allowedExtensions = /(\.jpg|\.png|\.jpeg )$/i;
+                    
+                       if(!allowedExtensions.exec(filePath)){
+                           
+           
+                    document.getElementById('sp_msg').innerText= '\n Please upload file having extensions .jpeg, .png, .jpeg only.';
+                     
+                           fileInput.value = '';
+                           return false;
+                       }else{
+                           //Image preview
+                           if (image.files && image.files[0]) {
+               				var reader = new FileReader();
+               				reader.onload = function (e){
+               					$('#admin_pic')
+               						.attr('src', e.target.result)
+               						.width(110)
+               						.height(70);
+               						document.getElementById('sp_msg').innerText=" ";
+               				};
+               				reader.readAsDataURL(image.files[0]);
+               		 }
+                       }
+              
+       	}
+       	
+       	read
+		
+		----------To Validate IFSC CODE-------------
+		function checkifsccode(){ 
+      var ifscVal = document.getElementById("account_ifsccode").value;
+    var reg_ifsc =/^[A-Z]{4}0[A-Z0-9]{6}$/;
+ if(ifscVal!='') {
+       if (reg_ifsc.test(ifscVal)==true) {
+         sp2.innerHTML=("");
+          sp2.style.color="";
+           document.getElementById("button").disabled=false;
+       } 
+         else {
+           sp2.innerHTML="Please Enter valid IFSC Code.";
+           sp2.style.color="red";
+           document.getElementById("button").disabled=true;
+          ifsc_code.focus();
+       }
+       }
+       else {
+          sp2.innerHTML=("");
+          sp2.style.color="";
+           document.getElementById("button").disabled=false;
+           
+       }
+   
+   }
+		
+		------------To validate Password-----------
+			function checkPassword(form) { 
+       password1 = form.password1.value; 
+       password2 = form.password2.value; 
+    
+       // If password not entered 
+       if (password1 == '') {
+         document.getElementById("form-bar").innerHTML="Please enter New Password"; 
+             return false; 
+       }
+       
+       else if (password2 == ''){ 
+          document.getElementById("form-bar2").innerHTML="Please enter confirm password"; 
+             return false;
+       }
+       // If Not same return False.     
+       else if (password1 != password2) { 
+           document.getElementById("form-bar2").innerHTML="\n Password did not match: Please try again...";
+           return false; 
+       } 
+   
+      
+   } 
+   
+   -------To Validate Email----------
+   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+   
+   oninput="validateGmail('email','sp_email','btn')"
+    <span id="sp_email" style="color:red"></span>
+   validateGmail
+
+
+('message', '<div class="alert alert-danger alert-dismissable fade show has-icon"><i class="la la-important-circle alert-icon"></i>
+            <button class="close" data-dismiss="alert" aria-label="Close"></button><strong>Oops!</strong><br>Your Email id Or Mobile No. Already Exist. Please Login...</div>');
+
+('message', '<div class="alert alert-success alert-dismissable fade show has-icon"><i class="la la-check-circle alert-icon"></i>
+            <button class="close" data-dismiss="alert" aria-label="Close"></button><strong>Well done!</strong><br>Register  Successfully.</div>');	
+
+
+---to validate account number----------
+function validateAccountNumber(){
+       var accountVal = document.getElementById("account-no").value;
+       var regacco =/[0-9]{9,18}/;
+       if(accountVal!='') {
+       if (regacco.test(accountVal)==true) {
+           sp1.innerHTML=("");
+           sp1.style.color="";
+           document.getElementById("button").disabled=false;
+       } 
+      else {
+           sp1.innerHTML="Account Number Should Be Of 18 Digits Only";
+           sp1.style.color="red";
+           document.getElementById("button").disabled=true;
+           account_no.focus();
+       }
+       }
+       else {
+           sp1.innerHTML=("");
+           sp1.style.color="";
+           document.getElementById("button").disabled=false;
+           
+       }
+   
+   }
+-------------to validate upi id-----------
+function checkUpiId(){ 
+      var upiVal = document.getElementById("account-upiid").value;
+    var reg_upi = /^[\w.-]+@[\w.-]+$/;
+ if(upiVal!='') {
+       if (reg_upi.test(upiVal)==true) {
+          sp_upiid.innerHTML=("");
+           sp_upiid.style.color="";
+           document.getElementById("button").disabled=false;
+       } 
+         else {
+          sp_upiid.innerHTML="Please Enter valid UPI Id.";
+           sp_upiid.style.color="red";
+           document.getElementById("button").disabled=true;
+           upi_id.focus();
+       }
+       }
+       else {
+           lbl_upiid.innerHTML=("");
+           lbl_upiid.style.color="";
+           document.getElementById("button").disabled=false;
+           
+       }
+   
+   }			
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   '<div class="alert alert-success alert-dismissible fade show">
+                    <strong>Success!</strong>  successfully!.
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                </div>'
+				 function checkPassword(form) { 
+                
+                
+                var password1 = form.password1.value; 
+                var password2 = form.password2.value; 
+    
+                // If password not entered 
+                if (password1 == '') 
+                      document.getElementById('form-bar2').innerText="Please enter new password";
+                       return false; 
+                // If confirm password not entered 
+                else if (password2 == '') 
+                   document.getElementById('form-bar').innerText="Please enter confirm password"; 
+                       return false; 
+                // If Not same return False.     
+                else if (password1 != password2) { 
+                    document.getElementById('form-bar').innerText= "\n Password and confirm password did not match: Please try again....";
+                    return false; 
+                }
+                else{
+                    document.getElementById('form-bar').innerText= ("");
+                    return true;
+                }
+  
+                // If same return True. 
+                // else{ 
+                //     alert("Password Match!") 
+                //     return true; 
+                // } 
+            } 
+        </script>
+<?php
+   $this->load->view('admin/includes/footer');
+   ?>
+  
+   
+   <script>
+   function validateMobile2(){
+       var mobVal2 = document.getElementById("mobile1").value;
+       var regmob2 = /[6789]{1}[0-9]{9}/;
+       if(mobVal2!='') {
+       if (regmob2.test(mobVal2)==true) {
+          document.getElementById("sp2").innerHTML=("");
+           document.getElementById("sp2").style.color="";
+           document.getElementById("button").disabled=false;
+       } 
+      else {
+           document.getElementById("sp2").innerHTML="Invaild mobile No!";
+           document.getElementById("sp2").style.color="red";
+           document.getElementById("button").disabled=true;
+           phone.focus();
+       }
+       }
+       else {
+           document.getElementById("sp2").innerHTML=("");
+           document.getElementById("sp2").style.color="";
+           document.getElementById("button").disabled=false;
+           
+       }
+   
+   }
+   
+       function changePass(){
+           
+           var form = document.getElementById('changeform');
+           var result = checkPassword(form);
+           if(result){
+                    $.ajax({
+               
+               url:"<?= base_url('Admin/admin_profile1')?>",
+               method:"POST",
+               data:$("#changeform").serialize(),
+               success:function(response){
+                   if(response == 'Success'){
+                        swal({
+                        title: "Success!",
+                        text: "Password Changed Successfully",
+                        icon: "success",
+                        button:false,
+                        timer:3000
+                        
+                        });
+                   }else{
+                        swal({
+                        title: "Warning!",
+                        text: "Please Enter Correct Password",
+                        icon: "warning",
+                        button:false,
+                        timer:3000
+                        });
+                   }    
+                        
+               }
+           });
+           }
+       }
+   </script>
+   function MembershipType(sp1,sp2)
+// {
+//     var sp1=document.getElementById(s1);
+//     var sp2=document.getElementById(s2);
+   
+//     sp2.innerHTML="";
+//     if(sp1.value=="Indian")
+//     {
+//         var optionArray=['₹2000|₹2000','₹1000|₹1000','₹5000|₹5000'];
+//     }
+//     if(sp2.value=="Foreign")
+//     {
+//         var optionArray=['$ 50|$ 50','$ 100|$ 100','$ 25|$ 25'];
+//     }
+//     for(var option in optionArray)
+//     {
+//         var pair=optionArray[option].split("|");
+//         var newOption=document.createElement("option");
+//       newOption.value=pair[0];
+//       newOption.innerHTML=pair[1];
+//       sp2.options.add(newOption);
+//     }
+// }
+
+
+
+ function matchPassword() 
+            { 
+                
+               var password=document.getElementById("password");
+               var password1=document.getElementById("password1").value;
+                var password2=document.getElementById("password2").value;
+                    if(password1 != password2)
+                    {
+                         document.getElementById('form-bar').innerHTML= "\n Password and confirm password did not match: Please try again....";
+                        document.getElementById('btn_submit').disabled=true;
+                    
+                          } 
+                          else
+                          {
+                               document.getElementById('form-bar').innerHTML= ("");
+                                document.getElementById('btn_submit').disabled=false;
+                              return true;
+                          }
+                  
+            } 
+			
+			
+			
+			
+			
+			
+		 function preview1(image,id){
+     var filePath = image.value;
+   
+                       var allowedExtensions =  /(\.pdf|\.PDF|\.txt|\.TXT|\.doc|\.DOC|\.docx|\.DOCX)$/i;
+                       if(!allowedExtensions.exec(filePath)){
+                        document.getElementById("span_message1"+id).innerHTML= "\n Please upload file having extensions .pdf ,.txt,.doc,.docx  only.";
+                         document.getElementById("button2"+id).disabled=true;
+                        //return false;
+                       }else{
+                           //Image preview
+                           if (image.files && image.files[0]) {
+               				var reader = new FileReader();
+               				reader.readAsDataURL(image.files[0]);
+               				document.getElementById("span_message1"+id).innerHTML= "";
+               				document.getElementById("button2"+id).disabled=false;
+               		 }
+                       }
+              
+       	}	
+			
+			// 		<script>
+//   function ShowTextBox()
+//   {
+//       var txt_box=document.getElementById("showbox").value;
+//       if(txt_box == "pdf")
+//       {
+//   document.getElementById("txt2").style.display = "block";
+//  document.getElementById("txt3").style.display = "none";
+//       }
+       
+//       if(txt_box == "link")
+       
+//       {
+//           document.getElementById("txt3").style.display = "block";
+//           document.getElementById("txt2").style.display = "none";
+//       }
+//   }
+// 		</script>
+
+
+DQNjM$OhvyRE##
+
+
+
+   function validatecoupanCode()
+      {
+          var coupan = $("#coupan").val();
+         
+          if(coupan == 0)
+          {
+              document.getElementById("sp2").innerHTML="Invaild amount,amount must be greater than 0!";
+          document.getElementById("sp2").style.color="red";
+          document.getElementById("btn2").disabled=true;
+              
+          }
+          else
+          {
+            document.getElementById("sp2").innerHTML=("");
+          document.getElementById("sp2").style.color="";
+          document.getElementById("btn2").disabled=false;
+          }
+      }
+	  
+	  
+	  
+	  
+	  
+	  function validateQuestion2(id)
+       	{
+       //var question2 = document.getElementById("question_des2"+id).value;
+   if ($('#question_des2'+id).summernote('isEmpty')) 
+     
+      {
+           event.preventDefault();
+        document.getElementById("sp_ques2"+id).innerHTML="Please fill this field";
+        document.getElementById("sp_ques2"+id).style.color="red";
+       
+      
+       
+      } 
+    
+   }
+   
+   
+   
+       		function validateImage()
+       	{
+       var filename = document.getElementById("slider0").value;
+     //  alert(filename);
+  //event.preventDefault(); 
+      if (!filename) 
+      {
+            event.preventDefault();
+         document.getElementById("sp_image5").innerHTML="Please upload file";
+          document.getElementById("sp_image5").style.color="red";
+        document.getElementById("button").disabled=true;
+      
+       
+      } 
+     else 
+     {
+          
+           document.getElementById("sp_image5").innerHTML="";
+           document.getElementById("sp_image5").style.color="";
+          document.getElementById("button").disabled=false;
+      
+       
+           
+       }
+        
+       
+   
+   }
+   
+   function validateMaxAmount2()
+      {
+          var max_amount2 = $("#max_amount2").val();
+         
+          if(max_amount2 == 0)
+          {
+              document.getElementById("sp5").innerHTML="Invaild amount,amount must be greater than 0!";
+          document.getElementById("sp5").style.color="red";
+          document.getElementById("btn").disabled=true;
+              
+          }
+          else
+          {
+            document.getElementById("sp5").innerHTML=("");
+          document.getElementById("sp5").style.color="";
+          document.getElementById("btn").disabled=false;
+          }
+      }
+       function validate_negative_value(value){
+   if (value > 0){
+       
+   }   else{
+        return false;
+   }
+}
+
+function calculateDiscountPercentage(discounted_price) {
+  if (discounted_price > 0) {
+    var actualPrice = jQuery('#price').val();
+    if(actualPrice > discounted_price){
+        if ( actualPrice > 0) {
+      var reducedPrice = actualPrice - discounted_price;
+      var discountedPercentage = (reducedPrice / actualPrice) * 100;
+      if (discountedPercentage > 0) {
+        jQuery('#discounted_percentage').text(discountedPercentage.toFixed(2)+'%');
+
+      }else {
+        jQuery('#discounted_percentage').text('<?php echo '0%'; ?>');
+      }
+    }
+    jQuery('#lbl_error').text('');
+        $('#submit_button').show();
+    } else{
+        jQuery('#lbl_error').text('Discounted price should not be greater and equal than price.');
+        $('#submit_button').hide();
+    }
+  }
+}
+   
+   
+   
+    function validateAmount()
+      {
+          var max_amount2 = $("#price").val();
+         
+          if(max_amount2  <= 0 )
+          {
+              document.getElementById("sp5").innerHTML="Invaild amount,amount must be greater than 0!";
+          document.getElementById("sp5").style.color="red";
+          document.getElementById("submit_button").disabled=true;
+              
+          }
+          else
+          {
+            document.getElementById("sp5").innerHTML=("");
+          document.getElementById("sp5").style.color="";
+          document.getElementById("submit_button").disabled=false;
+          }
+      }
+   
+   
+   
+   
+   <a href="<?php echo base_url()?>Admin/forgot_pass" class="text-right f-w-600" style="float:right!important; color: #deaf01!important;"> Sign Up</a>
+            
+   (function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+
+
+
+	function validateMobile2(id){
+       var mobVal2 = document.getElementById("mobile2"+id).value;
+       var regmob2 = /[6789]{1}[0-9]{9}/;
+	   /^[6789][0-9]{8}\d$/
+       if(mobVal2!='') {
+       if (regmob2.test(mobVal2)==true) {
+          document.getElementById("sp2"+id).innerHTML=("");
+           document.getElementById("sp2"+id).style.color="";
+           document.getElementById("button2"+id).disabled=false;
+       } 
+      else {
+           document.getElementById("sp2"+id).innerHTML="Invaild mobile No!";
+           document.getElementById("sp2"+id).style.color="red";
+           document.getElementById("button2"+id).disabled=true;
+           phone.focus();
+       }
+       }
+       else {
+           document.getElementById("sp2"+id).innerHTML="";
+           document.getElementById("sp2"+id).style.color="";
+           document.getElementById("button2"+id).disabled=false;
+           
+       }
+   
+   }
+   
+    function validateAdhaar(field,msg,btn){
+        var adVal = $("#"+field).val();
+        var sp3 = document.getElementById(msg);
+        var regad = /[123456789][0-9]{11}/;
+        if (regad.test(adVal)==true) {
+            sp3.innerHTML=("");
+            sp3.style.color="";
+            document.getElementById(btn).disabled=false;
+        } 
+        else {
+            sp3.innerHTML="Invalid Adhaar Number";
+            sp3.style.color="red";
+            document.getElementById(btn).disabled=true;
+            
+        }
+        }
+		function validatePan(field,msg,btn){
+        var panVal = $("#"+field).val();
+        var sp1 = document.getElementById(msg);
+        var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+            if(regpan.test(panVal)==true){
+           // valid pan card number
+            sp1.innerHTML=("");
+            sp1.style.color="";
+            document.getElementById(btn).disabled=false;
+            } 
+            else {
+            sp1.innerHTML="Invalid Pan Number";
+            sp1.style.color="red";
+            document.getElementById(btn).disabled=true;
+            }
+        }
+		
+		
+		 function validateGstin(field,msg,btn){
+        var gstVal = $("#"+field).val();
+        var reggst = /\d{2}[A-Z]{5}\d{4}[A-Z]{1}[A-Z\d]{1}[Z]{1}[A-Z\d]{1}/;
+        var sp2 = document.getElementById(msg);
+        
+            if(reggst.test(gstVal)==true){
+           // valid pan card number
+            sp2.innerHTML=("");
+            sp2.style.color="";
+            document.getElementById(btn).disabled=false;
+            } 
+            else {
+            sp2.innerHTML="Invalid GST Number";
+            sp2.style.color="red";
+            document.getElementById(btn).disabled=true;
+            }
+        }
+    function validatePan(field,msg,btn){
+        var panVal = $("#"+field).val();
+        var sp1 = document.getElementById(msg);
+        var regpan = /^([a-zA-Z]){5}([0-9]){4}([a-zA-Z]){1}?$/;
+            if(regpan.test(panVal)==true){
+           // valid pan card number
+            sp1.innerHTML=("");
+            sp1.style.color="";
+            document.getElementById(btn).disabled=false;
+            } 
+            else {
+            sp1.innerHTML="Invalid Pan Number";
+            sp1.style.color="red";
+            document.getElementById(btn).disabled=true;
+            }
+        }
+		
+		oninput="validateMobile('father_phone','sp_mobile2','btn')"
+		 <span class="sp_mobile3" style="color:red"></span>
+		for number:--
+   onkeypress="return (event.charCode > 47 && event.charCode < 58)"
+ for char:--
+   onkeypress=" return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"
+   INSERT INTO `student_attendances` (`id`, `teacher_id`, `student_id`, `course_id`, `month`, `year`, `day_1`, `day_2`, `day_3`, `day_4`, `day_5`, `day_6`, `day_7`, `day_8`, `day_9`, `day_10`, `day_11`, `day_12`, `day_13`, `day_14`, `day_15`, `day_16`, `day_17`, `day_18`, `day_19`, `day_20`, `day_21`, `day_22`, `day_23`, `day_24`, `day_25`, `day_26`, `day_27`, `day_28`, `day_29`, `day_30`, `day_31`, `attends_status`, `status`, `created_at`, `modified_at`) VALUES ('2', '4', '83', '24', '2', '2022', 'A', 'A', 'A', 'A', 'P', 'A', 'A', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'A', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', '', NULL, NULL, NULL, '1', current_timestamp(), current_timestamp());
+   
+   
+   
+   
+   
+   
+   	function validation(){
+	    //alert('test');
+	    var flag = 0;
+	    $("#verifyMobile").hide();
+	    $("#alternate_error").hide();
+        $("#requirements_error").hide();
+        $("#passport_error").hide();
+        $("#passdoc_error").hide();
+	    var travel_type= $('#travel_type_id').val();
+	    //alert(travel_type);
+	    var startDate = new Date($('#start_date').val());
+        var endDate = new Date($('#end_date').val());
+        
+        // alternet_mobile
+        var mobile = $("#mobile").val();
+        // alert(mobile);
+        var re =/^[6,7,8,9][0-9]{0,9}$/;
+        if(travel_type.length==0){
+           $("#travel_error").show();
+             $("#travel_error").text("Select travel type");
+            flag =1;
+        }
+        if(!re.test(mobile)){
+             $("#verifyMobile").show();
+             $("#verifyMobile").text("Mobile number is incorrrect");
+            flag =1;
+        }
+        if(mobile.length != 10){
+             $("#verifyMobile").show();
+             $("#verifyMobile").text("Mobile number should be 10 digit");
+            flag =1; 
+        }
+        var alternet_mobile = $("#alternet_mobile").val();
+        // alert(alternet_mobile);
+        if(alternet_mobile.length != ''){
+            var re =/^[6,7,8,9][0-9]{0,9}$/;
+            if(!re.test(alternet_mobile)){
+               $("#alternate_error").show();
+             $("#alternate_error").text("Alternet mobile number is incorrrect");
+                flag =1;
+            }
+            if(alternet_mobile.length != 10){
+               $("#alternate_error").show();
+               $("#alternate_error").text("Alternet mobile number should be 10 digit");
+                flag =1;
+            }
+        }
+        
+        
+        if (startDate > endDate){
+            alert("End date must be greater than start date");
+            flag =1;
+        }
+        var passport_no = $("#passport_no").val();
+        //alert(passport_no);
+        var re =/^[A-PR-WY][1-9]\d\s?\d{4}[1-9]$/;
+        if(!re.test(passport_no)){
+             $("#passport_error").show();
+             $("#passport_error").text("Passport number is invalid");
+            flag =1;
+        }
+        
+       var checked = $(".requirment:checked").length;
+
+        if(!checked) {
+            $("#requirements_error").show();
+            $("#requirements_error").text("Select atleast one requirement");
+            flag =1;
+        }
+                    
+      
+        
+        var ext = $('#document').val().split('.').pop().toLowerCase();
+       // alert(ext)
+        if($.inArray(ext, ['gif','png','jpg','jpeg','pdf']) == -1 && ext.length!=0) {
+            // alert(ext)
+             $("#passdoc_error").show();
+             $("#passdoc_error").text("Invalid file type");
+            flag =1;
+        }
+        $('#document').change(
+                function () {
+                    var fileExtension = ['jpeg', 'jpg', 'pdf','png'];
+                    if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                        alert("Only '.jpeg','.jpg','.pdf' formats are allowed.");
+                        $("#passdoc_error").show();
+                        $("#passdoc_error").text("Invalid file");
+                        flag =1;
+                        return false;
+                    }
+        });
+        // console.log("cc");
+          if(flag == 1){
+            return false;   
+        }
+        
+	}
+	
+	
+	$('#document').change(
+        function () {
+            var fileExtension = ['jpeg', 'jpg', 'pdf','png'];
+            if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                // alert("Only '.jpeg','.jpg','.pdf' formats are allowed.");
+                $("#passdoc_error").show();
+                $("#passdoc_error").text("Invalid file");
+                flag =1;
+                return false;
+            }
+    });
+    
